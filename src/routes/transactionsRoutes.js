@@ -4,12 +4,13 @@ import {
 } from '../controllers/Transactions/transactionsController.js';
 
 import { Router } from 'express';
-import validateUser from '../middlewares/validateUser.js';
+
+import authUser from '../middlewares/authMiddleware.js';
 
 const router = Router();
 
-router.post('/transactions/:typeTransaction', validateUser, registerTransactions);
+router.post('/transactions/:typeTransaction', authUser, registerTransactions);
 
-router.get('/home', validateUser, infosHomePage);
+router.get('/home', authUser, infosHomePage);
 
 export default router;

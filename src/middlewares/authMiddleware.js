@@ -1,5 +1,7 @@
 import db, { connectClient, closeClient } from '../databases/mongo.js';
-async function validateUser(request, response, next) {
+
+// valida token
+async function authUser(request, response, next) {
   const { authorization } = request.headers;
   const token = authorization?.replace('Baerer ', ''); // o ? significa que é opcional, ja que o token pode vir null
   if (!token)
@@ -21,4 +23,4 @@ async function validateUser(request, response, next) {
   //diz que pode continuar o fluxo
 }
 
-export default validateUser;
+export default authUser;

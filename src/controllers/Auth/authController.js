@@ -4,20 +4,6 @@ import { v4 as uuid } from 'uuid';
 import db, { connectClient, closeClient } from '../../databases/mongo.js';
 export async function createUser(request, response) {
   const { email, password, name } = request.body;
-  const userRegister = request.body;
-
-  const userSchema = joi.object({
-    name: joi.string().required(),
-    email: joi.string().email().required(),
-    password: joi.string().required()
-  });
-  const validate = userSchema.validate(userRegister, { abortEarly: false });
-  const { error } = validate;
-  if (error) {
-    const errors = error.details.map(error => error.message);
-    response.status(422).send(errors);
-    return;
-  }
 
   const passwordCrypted = bcrypt.hashSync(password, 10);
 
