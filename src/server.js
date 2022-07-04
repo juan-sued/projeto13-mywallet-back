@@ -9,10 +9,7 @@ const server = express();
 server.use(
   cors({
     credentials: true,
-    origin: [
-      'https://p13-mywallet.herokuapp.com/',
-      'https://projeto13-mywallet-eta.vercel.app/'
-    ]
+    origin: 'https://projeto13-mywallet-eta.vercel.app/'
   })
 );
 
