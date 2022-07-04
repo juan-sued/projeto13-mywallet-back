@@ -74,7 +74,7 @@ export async function login(request, response) {
 
     response.status(200).send({
       headers: {
-        Authorization: 'Baerer ' + token
+        Authorization: 'Bearer ' + token
       },
       user: {
         user_Id,
