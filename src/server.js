@@ -6,7 +6,12 @@ import transationsRoutes from './routes/transactionsRoutes.js';
 
 const server = express();
 
-server.use(cors());
+server.use(
+  cors({
+    credentials: true,
+    origin: 'https://p13-mywallet.herokuapp.com/'
+  })
+);
 
 server.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
