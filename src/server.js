@@ -6,7 +6,11 @@ import transationsRoutes from './routes/transactionsRoutes.js';
 
 const server = express();
 
-server.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 server.use(express.json());
 
 server.use(authRouter);

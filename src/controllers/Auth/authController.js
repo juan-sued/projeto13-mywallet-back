@@ -2,6 +2,7 @@ import joi from 'joi';
 import bcrypt from 'bcrypt';
 import { v4 as uuid } from 'uuid';
 import db, { connectClient, closeClient } from '../../databases/mongo.js';
+
 export async function createUser(request, response) {
   const { email, password, name } = request.body;
 
