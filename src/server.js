@@ -6,7 +6,11 @@ import transationsRoutes from './routes/transactionsRoutes.js';
 
 const server = express();
 
-server.use(cors());
+server.use(
+  cors({
+    origin: '*'
+  })
+);
 
 server.use(express.json());
 
