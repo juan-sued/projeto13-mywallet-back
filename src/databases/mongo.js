@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const client = new MongoClient(process.env.URL_CONNECT_MONGO);
+const client = new MongoClient(process.env.MONGO_URI);
 let db;
 db = client.db(process.env.MONGO_DATABASE);
 

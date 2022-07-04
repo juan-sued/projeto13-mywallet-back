@@ -12,6 +12,7 @@ server.use(express.json());
 server.use(authRouter);
 server.use(transationsRoutes);
 
-server.listen(process.env.PORT || 5000, () => {
-  console.log(chalk.cyan('Rodando na porta 5000'));
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+  console.log(chalk.cyan('Rodando'));
 });
